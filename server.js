@@ -32,5 +32,5 @@ require('./app/routing/html-routes.js')(app);
 // =============================================================
 
 app.listen(process.env.PORT || 3000, function(){
-	console.log('App listening on PORT ' + process.env.PORT);
+	console.log('App listening on PORT ' + PORT);
 });
