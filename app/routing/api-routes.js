@@ -1,5 +1,5 @@
 
-var friendList = require('../data/friends.js');
+var userList = require('../data/user.js');
 var path = require('path');
 
 //==============================================
@@ -12,6 +12,6 @@ module.exports = function(app){
 	});
 
 	app.post('/api/friends', function(req, res){
-		friendList.push(req.body);
+		userList.push(req.body);
 	})
 };
