@@ -1,3 +1,5 @@
+// WE DOTN NEED THIS FOLDER JUST KEPT IT INTELL E GET SEQUILIZE RUNNING 
+
 var friends = [
 	{
 		name: 'Donald Trump',
