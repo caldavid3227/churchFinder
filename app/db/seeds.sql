@@ -1,0 +1,1 @@
+INSERT INTO choices (id, name, address, city, state, zip, phone, url, size, denomination) VALUES (0, "Episcopal Church-The Nativity", "22405 N Miller Rd", "Scottsdale", "AZ", 85255, "nativityscottsdale.org", 1500, "Episcopal");
