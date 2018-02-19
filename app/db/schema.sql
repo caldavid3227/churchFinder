@@ -1,0 +1,17 @@
+CREATE DATABASE churches_db;
+USE churches_db;
+
+CREATE TABLE choices 
+(
+  id INTEGER(11) NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  address VARCHAR(50) NOT NULL,
+  city VARCHAR(50) NOT NULL,
+  state VARCHAR(2) NOT NULL,
+  zip INTEGER(5) NOT NULL,
+  phone VARCHAR(10) NOT NULL,
+  url VARCHAR(50) NOT NULL,
+  size INTEGER(5) NOT NULL,
+  denomination VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id) 
+ );
