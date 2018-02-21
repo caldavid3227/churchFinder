@@ -1,24 +1,12 @@
 {
-  "name": "churchfinder",
+  "name": "project2test",
   "version": "1.0.0",
-  "description": "'Church locator for project 2'",
+  "description": "churches app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/caldavid3227/churchFinder.git"
-  },
-  "author": "Caleb, Paula, Bryant",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/caldavid3227/churchFinder/issues"
-  },
-  "homepage": "https://github.com/caldavid3227/churchFinder#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2"
-  }
+  "author": "paula",
+  "license": "ISC"
 }

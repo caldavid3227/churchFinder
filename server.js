@@ -1,36 +1,38 @@
-//=============================================================
-// Dependencies
-// ============================================================
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
+var express = require("express");
+var bodyParser = require("body-parser");
 
-
-//=============================================================
-// Sets up the Express App
-//=============================================================
-
-var app = express();
 var PORT = process.env.PORT || 3000;
 
+var app = express();
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 33.448376, lng: -112.074036},
+    zoom: 5
+  });
+}
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 
-//=============================================================
-//Routing
-//=============================================================
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-require('./app/routing/api-routes.js')(app); 
-require('./app/routing/html-routes.js')(app);
+// Import routes and give the server access to them.
+var routes = require("./controllers/churchesController.js");
 
+app.use(routes);
 
-// =============================================================
-// Starts the server to begin listening 
-// =============================================================
-
-app.listen(process.env.PORT || 3000, function(){
-	console.log('App listening on PORT ' + process.env.PORT);
+app.listen(PORT, function() {
+  console.log("App now listening at localhost:" + PORT);
 });
