@@ -1,5 +1,3 @@
-
-var UserList = require('../data/user.js');
 var Church = require("../models/church.js")
 var path = require('path');
 
