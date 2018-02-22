@@ -1,8 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
-var PORT = process.env.PORT || 3000;
-
 var app = express();
 
 var map;
@@ -33,6 +30,7 @@ var routes = require("./controllers/churchesController.js");
 
 app.use(routes);
 
-app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT);
+app.listen(process.env.PORT || 3000, function(){
+	console.log('App listening on PORT ' + PORT);
 });
+
