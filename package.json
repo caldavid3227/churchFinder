@@ -8,5 +8,8 @@
     "start": "node server.js"
   },
   "author": "paula",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sequelize": "^4.33.4"
+  }
 }
