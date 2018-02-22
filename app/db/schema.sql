@@ -9,7 +9,6 @@ CREATE TABLE choices
   city VARCHAR(50) NOT NULL,
   state VARCHAR(2) NOT NULL,
   zip INTEGER(5) NOT NULL,
-  phone VARCHAR(10) NOT NULL,
   url VARCHAR(50) NOT NULL,
   size INTEGER(5) NOT NULL,
   denomination VARCHAR(50) NOT NULL,
