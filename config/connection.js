@@ -1,10 +1,13 @@
 //this is connecting to sequilize 
 //I NEED TO FIGURE OUT HOW TO ADD MY PASS WORD USER NAME AND DATABASE TO GIT INGNORE
+require("dotenv").config();
 
 var Sequelize = require("sequelize");
 
+
 // Creates mySQL connection using Sequelize
-var sequelize =new Sequelize("church_db", "root", "1988Vwgti", {
+var sequelize =new Sequelize("church_db", process.env.DB_USERNAME, process.env.DB_PASSWORD
+, {
   host: "localhost",
   dialect: "mysql",
   pool: {
