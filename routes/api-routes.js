@@ -3,40 +3,30 @@ var path = require('path');
 
 
 //ROUTES
-// one will be a post that is a find all where [zipcode = user.zip] [relgion = user.relgion]
-//one will  create in to the second table of users 
 module.exports = function(app){
 	app.get('/api/friends', function(req, res){
-		res.json(friendList);
+		res.json(Church);
+	});
+// one will be a post that is a find all where [zipcode = user.zip] [relgion = user.relgion]
+	app.get("api/:city&:relgion&:denomination", function(req, res){
+		
 	});
 
-	app.post('/api/friends', function(req, res){
-		userList.push(req.body);
-	});
+//one will allow user to create curch in our data base
 
-	app.get("api/:area?", function(req, res){
-		if(req.params.city){
-			Church.findall({
-				where: {
-					city: req.params.city
-				}
-			}).then(function(result){
-				return res.json(result);
-			});
-		}
-		//this else will show all the chruches if nothing is pput in on the html side
-		 else{
-			alert("No chruches were found");
-		}
-	});
-
-	app.post("user/new", function(req, res){
+	app.post("/church/new", function(req, res){
 		//grap req
-		var users = req.body
-
+		var church = req.body
 		//making create 
-		UserList.create({
-			//im not sure what we will put in the second table
-		})
-	})
+		Church.create({
+			name: church.name,
+			address: church.address,
+			city: church.city,
+			state: church.state,
+			zip: church.zip,
+			url: church.url,
+			size: church.size,
+			denomination: church.denomination
+		});
+	});
 };

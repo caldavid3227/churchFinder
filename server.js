@@ -31,7 +31,7 @@ require("./routes/api-routes.js")(app);
 // Here we introduce HTML routing to serve different HTML files
 require("./routes/html-routes.js")(app);
 
-var PORT = process.env.PORT;
+var PORT = 3000;
 app.listen(process.env.PORT || 3000, function(){
 	console.log('App listening on PORT ' + PORT);
 });

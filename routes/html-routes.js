@@ -15,5 +15,7 @@ module.exports = function(app){
 		res.sendFile(path.join(__dirname, '../public/findChurch.html'));
 	});
 	//this is the add your church!
-	//need this still
+	app.get('/addChurch', function(req, res){
+		res.sendFile(path.join(__dirname, '../public/addChurch.html'))
+	})
 };
