@@ -14,6 +14,8 @@ var Church = sequelize.define("churches",{
   url: Sequelize.STRING,
   size: Sequelize.INTEGER,
   denomination: Sequelize.STRING
+},{
+	timestamps: false
 });
 
 Church.sync();
