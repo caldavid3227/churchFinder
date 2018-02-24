@@ -9,6 +9,8 @@ function initMap() {
     zoom: 5
   });
 }
+//require .env
+require("dotenv").config();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -26,11 +28,13 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/churchesController.js");
+require("./routes/api-routes.js")(app);
 
-app.use(routes);
+// Here we introduce HTML routing to serve different HTML files
+require("./routes/html-routes.js")(app);
 
+var PORT = 3000;
 app.listen(process.env.PORT || 3000, function(){
-	// console.log('App listening on PORT ' + PORT);
+	console.log('App listening on PORT ' + PORT);
 });
 

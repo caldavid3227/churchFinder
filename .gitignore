@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+node_modules
+=======
 node_modules/
 .DS_Store
 .env
+config.json
+>>>>>>> 51bdac17404cceb22dda3fbd4b0dd0cdbdfda8b0
