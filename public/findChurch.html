@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Survey</title>
+
+<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
+
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	
+		<h3>Help us locate the right church for you...</h3>
+		<hr>
+		<form role="form" id="survey">
+			<h2>About you</h2>
+			<div class="form-group">
+				<label for="usr">Name: (Optional)</label>
+				<input type="text" class="form-control" id="name">
+			</div>
+			
+			<!-- <div class="form-group">
+				<label for="usr">City: (Required)</label>
+				<input type="text" class="form-control" id="City">
+			</div>
+
+
+			<div class="form-group">
+				<label for="usr">State: (Required)</label>
+				<input type="text" class="form-control" id="State">
+			</div> -->
+
+			<div class="form-group">
+				<label for="usr">Zip Code: (Required)</label>
+				<input type="text" class="form-control" id="Zip_Code">
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Denomination preferred: (Optional)</label>
+				<input type="text" class="form-control" id="Denomination">
+			</div>
+
+
+
+			
+			<button type="button" class="btn btn-success btn-block" id="submit">Submit</button>
+	
+		</form>
+
+		<!-- Modal -->
+  <div class="modal fade" id="friend-modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="footer">
+  	<br>
+  	<br>
+  </div>
+	</div>

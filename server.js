@@ -1,36 +1,40 @@
-//=============================================================
-// Dependencies
-// ============================================================
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-
-
-//=============================================================
-// Sets up the Express App
-//=============================================================
-
+var express = require("express");
+var bodyParser = require("body-parser");
 var app = express();
-var PORT = process.env.PORT || 3000;
 
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 33.448376, lng: -112.074036},
+    zoom: 5
+  });
+}
+//require .env
+require("dotenv").config();
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 
-//=============================================================
-//Routing
-//=============================================================
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-require('./app/routing/api-routes.js')(app); 
-require('./app/routing/html-routes.js')(app);
+// Import routes and give the server access to them.
+require("./routes/api-routes.js")(app);
 
+// Here we introduce HTML routing to serve different HTML files
+require("./routes/html-routes.js")(app);
 
-// =============================================================
-// Starts the server to begin listening 
-// =============================================================
-
+var PORT = 3000;
 app.listen(process.env.PORT || 3000, function(){
 	console.log('App listening on PORT ' + PORT);
 });
+
