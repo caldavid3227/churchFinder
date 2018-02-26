@@ -1,17 +1,23 @@
 var Church = require("../models/church.js")
 var path = require('path');
-
-
 //ROUTES
 module.exports = function(app){
-	app.get('/api/friends', function(req, res){
-		res.json(Church);
-	});
+	// app.get('/api/Churchs', function(req, res){
+	// 	res.json(Church);
+	// });
 // one will be a post that is a find all where [zipcode = user.zip] [relgion = user.relgion]
-	app.get("api/", function(req, res){
-          Church.findAll({}).then(function(data) {
-        return res.json(data);
+	app.get("/api/:zip?/:denomination?", function(req, res){
+        console.log(req.params.denomination)
+          Church.findAll({
+          	where: {
+          		zip: req.params.zip,
+          		denomination: req.params.denomination
+          	}
+          }).then(function(data) {
+         return res.json(data);
       });
+	
+
 	});
 
 //one will allow user to create curch in our data base
