@@ -8,8 +8,10 @@ module.exports = function(app){
 		res.json(Church);
 	});
 // one will be a post that is a find all where [zipcode = user.zip] [relgion = user.relgion]
-	app.get("api/:city&:relgion&:denomination", function(req, res){
-		
+	app.get("api/", function(req, res){
+          Church.findAll({}).then(function(data) {
+        return res.json(data);
+      });
 	});
 
 //one will allow user to create curch in our data base
