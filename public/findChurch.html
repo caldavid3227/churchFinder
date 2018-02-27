@@ -15,6 +15,8 @@
 
   	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  	<script type="text/javascript" src="./assets/js/find.js"></script>
+
 </head>
 <body>
 
@@ -24,7 +26,7 @@
 	
 		<h3>Help us locate the right church for you...</h3>
 		<hr>
-		<form role="form" id="survey">
+		<form role="form" id="survey" >
 			<h2>About you</h2>
 			<div class="form-group">
 				<label for="usr">Name: (Optional)</label>
@@ -52,12 +54,14 @@
 				<input type="text" class="form-control" id="Denomination">
 			</div>
 
-
-
-			
 			<button type="button" class="btn btn-success btn-block" id="submit">Submit</button>
 	
 		</form>
+
+		<div class="panel-body" id="well-section">
+				
+					<!-- Content will go in here -->
+		</div>
 
 		<!-- Modal -->
   <div class="modal fade" id="friend-modal" role="dialog">
