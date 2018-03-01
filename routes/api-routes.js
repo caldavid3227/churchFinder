@@ -7,17 +7,16 @@ module.exports = function(app){
 	// });
 // one will be a post that is a find all where [zipcode = user.zip] [relgion = user.relgion]
 	app.get("/api/:zip?/:denomination?", function(req, res){
-        console.log(req.params.denomination)
-          Church.findAll({
+           console.log(req.params.denomination)
+           console.log(req.params.zip)
+        Church.findAll({
           	where: {
           		zip: req.params.zip,
           		denomination: req.params.denomination
           	}
           }).then(function(data) {
-         return res.json(data);
+        	 return res.json(data);
       });
-	
-
 	});
 
 //one will allow user to create curch in our data base
