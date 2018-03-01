@@ -1,4 +1,4 @@
-var Church = require("../models/church.js")
+var db = require("../models")
 var path = require('path');
 //ROUTES
 module.exports = function(app){
@@ -9,7 +9,7 @@ module.exports = function(app){
 	app.get("/api/:zip?/:denomination?", function(req, res){
            console.log(req.params.denomination)
            console.log(req.params.zip)
-        Church.findAll({
+        db.Church.findAll({
           	where: {
           		zip: req.params.zip,
           		denomination: req.params.denomination
@@ -23,17 +23,17 @@ module.exports = function(app){
 
 	app.post("/church/new", function(req, res){
 		//grap req
-		var church = req.body
+		var churches = req.body
 		//making create 
-		Church.create({
-			name: church.name,
-			address: church.address,
-			city: church.city,
-			state: church.state,
-			zip: church.zip,
-			url: church.url,
-			size: church.size,
-			denomination: church.denomination
+		db.Church.create({
+			name: churches.name,
+			address: churches.address,
+			city: churches.city,
+			state: churches.state,
+			zip: churches.zip,
+			url: churches.url,
+			size: churches.size,
+			denomination: churches.denomination
 		});
 	});
 };
