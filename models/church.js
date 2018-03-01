@@ -1,23 +1,49 @@
 // this will be where sequlize will go 
 // Dependencies
+// var Sequelize = require("sequelize");
+// // sequelize (lowercase) references our connection to the DB.
+// var sequelize = require("../config/connection.js");
 // =============================================================
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes) { 
 
-var Church = sequelize.define("churches",{
-  name: Sequelize.STRING,
-  address: Sequelize.STRING,
-  city: Sequelize.STRING,
-  state: Sequelize.STRING,
-  zip: Sequelize.INTEGER,
-  url: Sequelize.STRING,
-  size: Sequelize.INTEGER,
-  denomination: Sequelize.STRING
+var Church = sequelize.define("Church",{
+  name: {
+  	type: DataTypes.STRING,
+  	allownull: false,
+
+  },	
+  address:{
+  	type: DataTypes.STRING,
+  	allownull: false,
+
+  }, 
+  city: {  	
+  	type: DataTypes.STRING,
+  	allownull: false,	
+  }, 
+  state: {  	
+  	type: DataTypes.STRING,
+  	allownull: false,
+  }, 
+  zip: {  	
+  	type: DataTypes.INTEGER,
+  	allownull: false,
+  }, 
+  url:{  	
+  	type: DataTypes.STRING,
+  	allownull: false,
+  }, 
+  size:{  	
+  	type: DataTypes.INTEGER,
+  	allownull: false,
+  },  
+  denomination:{  	
+  	type: DataTypes.STRING,
+  	allownull: false,
+  },  
 },{
 	timestamps: false
 });
-
-Church.sync();
-
-module.exports = Church;
+return Church;
+// Church.sync();
+};
