@@ -5,14 +5,17 @@ $( document ).ready(function() {
       zip = $('#Zip_Code').val().trim(),
       denomination = $('#Denomination').val().trim(),
      console.log(zip);
-      if (zip == "") {
-        alert("Zip must be filled out");
-        return false;
-    }
-          if (denomination == "") {
-        alert("Denomination must be filled out");
-        return false;
-    }
+      vali();
+      function vali(){
+        if (zip == "") {
+          alert("Zip must be filled out");
+          return false;
+          }
+            if (denomination == "") {
+          alert("Denomination must be filled out");
+          return false;
+          }
+     };     
      emtpy();
 
      function emtpy(){
