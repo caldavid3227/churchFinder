@@ -7,6 +7,7 @@ nightmare
   .type("#Zip_Code", "85234")
   .type("#Denomination", "christian")
   .click("#submit")
+  .wait(3000)
   .evaluate(function() {
     return document.querySelector("#links a").href;
   })
